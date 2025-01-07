@@ -1,0 +1,28 @@
+<div class="container mt-5">
+    <div class="card shadow-lg p-4">
+        <h2 class="text-center mb-4">Employee Records</h2>
+
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered table-hover">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Password</th>
+                        <th>Phone Number</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let rec of records">
+                        <td>{{ rec.id }}</td>
+                        <td>{{ rec.name }}</td>
+                        <td>{{ rec.email }}</td>
+                        <td>{{ rec.password }}</td>
+                        <td>{{ rec.mobilenumber }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

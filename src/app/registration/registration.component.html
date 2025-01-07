@@ -1,0 +1,73 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+        <!-- Navbar Brand -->
+        <a class="navbar-brand" href="#">Employee Management System</a>
+        
+        <!-- Toggle Button for Mobile View -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <!-- Navbar Links -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <!-- Dashboard Button -->
+                <li class="nav-item">
+                    <a class="btn btn-light ms-3" routerLink='/dashboard' role="button">Dashboard</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container mt-5">
+    <div class="card shadow-lg p-4">
+        <h2 class="text-center mb-4">Employee Management</h2>
+        
+        <!-- Employee Form -->
+        <form [formGroup]="formgroup" (ngSubmit)="onsubmit()">
+            <div class="row mb-3">
+                <div class="col-md-3">
+                    <label for="name" class="form-label fs-6">Name</label>
+                </div>
+                <div class="col-md-9">
+                    <input type="text" id="name" class="form-control border rounded-pill" placeholder="Enter name" formControlName="name">
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-md-3">
+                    <label for="email" class="form-label fs-6">Email</label>
+                </div>
+                <div class="col-md-9">
+                    <input type="email" id="email" class="form-control border rounded-pill" placeholder="Enter email" formControlName="email">
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-md-3">
+                    <label for="password" class="form-label fs-6">Password</label>
+                </div>
+                <div class="col-md-9">
+                    <input type="password" id="password" class="form-control border rounded-pill" placeholder="Enter password" formControlName="password">
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-md-3">
+                    <label for="mobilenumber" class="form-label fs-6">Phone Number</label>
+                </div>
+                <div class="col-md-9">
+                    <input type="text" id="mobilenumber" class="form-control border rounded-pill" placeholder="Enter phone number" formControlName="mobilenumber">
+                </div>
+            </div>
+
+            <div class="text-center mt-4">
+                <button type="submit" class="btn btn-primary btn-lg" [disabled]="formgroup.invalid">Submit</button>
+
+                <!-- Delete Button -->
+                <button type="button" class="btn btn-danger btn-lg ms-3" (click)="del()" *ngIf="formgroup.value.id">Delete</button>
+            </div>
+        </form>
+    </div>
+</div>

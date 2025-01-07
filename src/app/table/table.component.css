@@ -1,0 +1,39 @@
+/* Custom Table Styles */
+.table {
+    font-size: 14px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  /* Subtle shadow around the table */
+}
+
+.table th,
+.table td {
+    vertical-align: middle;
+    text-align: center;
+    padding: 12px;
+}
+
+.table th {
+    background-color: #343a40; /* Dark background for header */
+    color: white;
+}
+
+.table-striped tbody tr:nth-child(odd) {
+    background-color: #f9f9f9; /* Light background for odd rows */
+}
+
+.table-hover tbody tr:hover {
+    background-color: #e9ecef; /* Slight hover effect for rows */
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+/* Making sure the table is fully responsive */
+@media (max-width: 768px) {
+    .table {
+        font-size: 12px;  /* Smaller text for mobile view */
+    }
+}
